@@ -24,13 +24,15 @@ limitations under the License.
 
 <body unresolved>
   <template is="dom-bind" id="demo">
+    <h3>Input</h3>
     <p>Header Counts Name: My Counts</p>
     <p>Header Data Name: My Data</p>
     <p>Show Checkboxes: true</p>
     <p>Checkbox Name: My Checkbox</p>
-    <p>Show Double Bar Chart: false</p>
-    <p>Data: [[stringData]]</p>
-    <p>Selected Ids:  [[selected]]</p>
+    <p>Data: [[stringify(data)]]</p>
+
+    <h3>Output</h3>
+    <p>Selected:  [[selected]]</p>
 
     <aggregation-query-and-display
       header-counts-name="My Counts"
@@ -45,6 +47,7 @@ limitations under the License.
   <script>
     (function(document) {
       var demo = document.querySelector('#demo');
+
       demo.data = [{
         count: 10,
         icon: 'icons:polymer',
@@ -81,7 +84,10 @@ limitations under the License.
         max: 10,
         text: 'Bar 5'
       }];
-      demo.stringData = JSON.stringify(demo.data);
+
+      demo.stringify = function(data) {
+        return JSON.stringify(data);
+      };
     })(document);
   </script>
 </body>
