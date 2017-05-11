@@ -59,6 +59,7 @@ A Polymer Element that builds and runs an elasticsearch aggregation query and sh
       aggregation-name="[[aggregationName]]"
       query-fields="[[queryField]]"
       query-values="[[queryValue]]"
+      query="{{query}}"
       client="[[client]]"
       index-name="[[indexName]]"
       index-types="[[indexTypes]]"
@@ -72,7 +73,7 @@ A Polymer Element that builds and runs an elasticsearch aggregation query and sh
 
     <elastic-error error="[[error]]" message="{{errorMessage}}"></elastic-error>
 
-    <!-- Yes, use the aggregationField for the queryField of the double-bar-chart in the aggregation-display! -->
+    <!-- Yes, use aggregationField for the query field of the double-bar-chart in the aggregation-display! -->
     <aggregation-display class="flex"
       count-property="[[dataCountProperty]]"
       icon-property="[[dataIconProperty]]"
@@ -144,9 +145,21 @@ A Polymer Element that builds and runs an elasticsearch aggregation query and sh
         },
 
         /**
+         * (Optional|Output)
+         *
+         * The elasticsearch query object.  Can be set instead of `queryField` and `queryValue`.
+         *
+         * @type {Object}
+         */
+        query: {
+          notify: true,
+          type: Object
+        },
+
+        /**
          * (Required)
          *
-         * The elasticsearch query field.
+         * The elasticsearch query field.  Not required if `query` is set.
          *
          * @type {String}
          */
@@ -157,7 +170,7 @@ A Polymer Element that builds and runs an elasticsearch aggregation query and sh
         /**
          * (Required)
          *
-         * The elasticsearch query value.
+         * The elasticsearch query value.  Not required if `query` is set.
          *
          * @type {String}
          */
