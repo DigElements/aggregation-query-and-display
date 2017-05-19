@@ -78,6 +78,7 @@ limitations under the License.
         expect(element.dataTextProperty).to.equal('text');
         expect(element.showCheckboxes).to.be.false;
         expect(element.showDoubleBarChart).to.be.false;
+        expect(element.target).to.equal('_self');
         expect(element.small).to.be.false;
         expect(element.error).to.not.exist;
         expect(element.errorMessage).to.equal('');
@@ -116,6 +117,7 @@ limitations under the License.
         expect(element.$$('aggregation-display').headerEntityName).to.equal('My Entity');
         expect(element.$$('aggregation-display').showCheckboxes).to.be.false;
         expect(element.$$('aggregation-display').showDoubleBarChart).to.be.false;
+        expect(element.$$('aggregation-display').target).to.equal('_self');
         expect(element.$$('aggregation-display').indexName).to.equal('myIndexName');
         expect(element.$$('aggregation-display').indexTypes).to.deep.equal(['myIndexType']);
         expect(element.$$('aggregation-display').queryField).to.equal('myAggregationField');

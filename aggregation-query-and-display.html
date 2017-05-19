@@ -90,6 +90,7 @@ A Polymer Element that builds and runs an elasticsearch aggregation query and sh
       show-checkboxes="[[showCheckboxes]]"
       checkbox-name="[[checkboxName]]"
       show-double-bar-chart="[[showDoubleBarChart]]"
+      target="[[target]]"
       client="[[client]]"
       index-name="[[indexName]]"
       index-types="[[indexTypes]]"
@@ -398,6 +399,19 @@ A Polymer Element that builds and runs an elasticsearch aggregation query and sh
         showDoubleBarChart: {
           type: Boolean,
           value: false
+        },
+
+        /**
+         * (Optional)
+         *
+         * The target page of the links.
+         *
+         * @type {String}
+         * @default '_self'
+         */
+        target: {
+          type: String,
+          value: '_self'
         },
 
         /**
