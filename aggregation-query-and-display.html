@@ -96,6 +96,7 @@ A Polymer Element that builds and runs an elasticsearch aggregation query and sh
       index-types="[[indexTypes]]"
       query-field="[[aggregationField]]"
       small="[[small]]"
+      selected-ids-property="[[selectedProperty]]"
       selected-ids="{{selected}}">
     </aggregation-display>
   </template>
@@ -479,15 +480,26 @@ A Polymer Element that builds and runs an elasticsearch aggregation query and sh
         },
 
         /**
-         * (Output)
+         * (Optional)
          *
-         * The list of selected IDs from the data.
+         * The property in the `selected` object containing the list of selected string IDs.  If undefined, assumes that `selected` itself is a list.
          *
-         * @type {Array}
+         * @type {String}
+         */
+        selectedProperty: {
+          type: String
+        },
+
+        /**
+         * (Optional|Output)
+         *
+         * The list of selected string IDs from the images to filter.  Either a list of an object containing a list at its `selectedProperty` property.
+         *
+         * @type {Array|Object}
          */
         selected: {
           notify: true,
-          type: Array
+          type: Object,
         }
       }
     });
