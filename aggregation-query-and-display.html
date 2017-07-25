@@ -64,6 +64,7 @@ A Polymer Element that builds and runs an elasticsearch aggregation query and sh
       index-name="[[indexName]]"
       index-types="[[indexTypes]]"
       filters="[[filterList]]"
+      properties-ready="[[propertiesReady]]"
       transform-config="[[transformConfig]]"
       transform-function="[[transformFunction]]"
       error="{{error}}"
@@ -222,6 +223,19 @@ A Polymer Element that builds and runs an elasticsearch aggregation query and sh
          */
         filterList: {
           type: Array
+        },
+
+        /**
+         * (Optional)
+         *
+         * Whether the elasticsearch query is ready to be run.  False forbids the query to be run at all.
+         *
+         * @type {Boolean}
+         * @default true
+         */
+        propertiesReady: {
+          type: Boolean,
+          value: true
         },
 
         /**

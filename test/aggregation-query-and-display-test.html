@@ -59,6 +59,7 @@ limitations under the License.
         expect(element.headerEntityName).to.equal('My Entity');
         expect(element.indexName).to.equal('myIndexName');
         expect(element.indexTypes).to.deep.equal(['myIndexType']);
+        expect(element.propertiesReady).to.be.true;
         expect(element.queryField).to.equal('myQueryField');
         expect(element.queryValue).to.equal('myQueryValue');
         expect(element.transformConfig).to.deep.equal({
