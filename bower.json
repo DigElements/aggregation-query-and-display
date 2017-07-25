@@ -18,7 +18,7 @@
   "dependencies": {
     "polymer": "Polymer/polymer#^1.7.0",
     "aggregation-display": "DigElements/aggregation-display#1.0.14",
-    "build-and-run-aggregation": "DigElements/build-and-run-aggregation#1.0.5",
+    "build-and-run-aggregation": "DigElements/build-and-run-aggregation#1.0.6",
     "elastic-error": "DigElements/elastic-error#1.0.1",
     "iron-flex-layout": "PolymerElements/iron-flex-layout#1.3.1"
   },
