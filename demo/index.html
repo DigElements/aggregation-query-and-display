@@ -18,37 +18,17 @@ limitations under the License.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
+  <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
   <link rel="import" href="../aggregation-query-and-display.html">
 </head>
 
 <body unresolved>
-  <template is="dom-bind" id="demo">
-    <h3>Input</h3>
-    <p>Header Counts Name: My Counts</p>
-    <p>Header Data Name: My Data</p>
-    <p>Show Checkboxes: true</p>
-    <p>Checkbox Name: My Checkbox</p>
-    <p>Data: [[stringify(data)]]</p>
-
-    <h3>Output</h3>
-    <p>Selected:  [[selected]]</p>
-
-    <aggregation-query-and-display
-      header-counts-name="My Counts"
-      header-data-name="My Data"
-      show-checkboxes
-      checkbox-name="My Checkbox"
-      data="[[data]]"
-      selected="{{selected}}">
-    </aggregation-query-and-display>
-  </template>
-
+<dom-bind>
   <script>
     (function(document) {
-      var demo = document.querySelector('#demo');
+      var domBind = document.querySelector('dom-bind');
 
-      demo.data = [{
+      domBind.data = [{
         count: 10,
         icon: 'icons:polymer',
         id: 1,
@@ -85,10 +65,33 @@ limitations under the License.
         text: 'Bar 5'
       }];
 
-      demo.stringify = function(data) {
+      domBind.stringify = function(data) {
         return JSON.stringify(data);
       };
     })(document);
   </script>
+  <template is="dom-bind" id="demo">
+    <h3>Input</h3>
+    <p>Header Counts Name: My Counts</p>
+    <p>Header Data Name: My Data</p>
+    <p>Show Checkboxes: true</p>
+    <p>Checkbox Name: My Checkbox</p>
+    <p>Data: [[stringify(data)]]</p>
+
+    <h3>Output</h3>
+    <p>Selected:  [[selected]]</p>
+
+    <aggregation-query-and-display
+      header-counts-name="My Counts"
+      header-data-name="My Data"
+      show-checkboxes
+      checkbox-name="My Checkbox"
+      data="[[data]]"
+      selected="{{selected}}">
+    </aggregation-query-and-display>
+  </template>
+
+
+</dom-bind>
 </body>
 </html>
