@@ -1,7 +1,7 @@
 {
   "name": "aggregation-query-and-display",
   "description": "A Polymer Element that builds and runs an elasticsearch aggregation query and shows the transformed results in a bar chart.",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "authors": [
     "Next Century Corporation"
   ],
@@ -17,10 +17,11 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.2",
-    "aggregation-display": "DigElements/aggregation-display#2.1.1",
+    "aggregation-display": "DigElements/aggregation-display#2.2.1",
     "build-and-run-aggregation": "DigElements/build-and-run-aggregation#2.1.0",
     "elastic-error": "DigElements/elastic-error#2.0.0",
-    "iron-flex-layout": "PolymerElements/iron-flex-layout#2.0.0"
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#2.0.0",
+    "paper-styles": "PolymerElements/paper-styles#^2.0.0"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^2.0.0",

@@ -19,6 +19,7 @@ limitations under the License.
 <link rel="import" href="../build-and-run-aggregation/build-and-run-aggregation.html">
 <link rel="import" href="../elastic-error/elastic-error.html">
 <link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../paper-styles/color.html">
 
 <!--
 A Polymer Element that builds and runs an elasticsearch aggregation query and shows the transformed results in a bar chart with optional selectable behavior.
@@ -40,6 +41,23 @@ A Polymer Element that builds and runs an elasticsearch aggregation query and sh
 </aggregation-query-and-display>
 ```
 
+### Styling
+
+`<aggregation-query-and-display>` provides the following custom properties and mixins for styling:
+
+Custom property                                                | Description                                                         | Default
+---------------------------------------------------------------|---------------------------------------------------------------------|--------
+`--aggregation-query-and-display-bar-color`                    | The color of the single or left bars.                               | --paper-grey-400
+`--aggregation-query-and-display-bar-count-color`              | The color of the single or left count labels.                       | --paper-grey-900
+`--aggregation-query-and-display-bar-height`                   | The height of the single or left bars.                              | 20px
+`--aggregation-query-and-display-bar-title-color`              | The color of the single or left title labels.                       | --paper-grey-900
+`--aggregation-query-and-display-bar-title-hover-color`        | The color of the single or left title labels on hover (if a link).  | --paper-grey-700
+`--aggregation-query-and-display-second-bar-color`             | The color of the right (second) bars.                               | --paper-grey-400
+`--aggregation-query-and-display-second-bar-count-color`       | The color of the right (second) count labels.                       | --paper-grey-900
+`--aggregation-query-and-display-second-bar-height`            | The height of the right (second) bars.                              | 20px
+`--aggregation-query-and-display-second-bar-title-color`       | The color of the right (second) title labels.                       | --paper-grey-900
+`--aggregation-query-and-display-second-bar-title-hover-color` | The color of the right (second) title labels on hover (if a link).  | --paper-grey-700
+
 @demo demo/index.html
 -->
 
@@ -50,6 +68,19 @@ A Polymer Element that builds and runs an elasticsearch aggregation query and sh
     <style>
       :host {
         display: block;
+      }
+
+      aggregation-display {
+        --aggregation-display-bar-color: var(--aggregation-query-and-display-bar-color, var(--paper-grey-400));
+        --aggregation-display-bar-count-color: var(--aggregation-query-and-display-bar-count-color, var(--paper-grey-900));
+        --aggregation-display-bar-height: var(--aggregation-query-and-display-bar-height, 20px);
+        --aggregation-display-bar-title-color: var(--aggregation-query-and-display-bar-title-color, var(--paper-grey-900));
+        --aggregation-display-bar-title-hover-color: var(--aggregation-query-and-display-bar-title-hover-color, var(--paper-grey-700));
+        --aggregation-display-second-bar-color: var(--aggregation-query-and-display-second-bar-color, var(--paper-grey-400));
+        --aggregation-display-second-bar-count-color: var(--aggregation-query-and-display-second-bar-count-color, var(--paper-grey-900));
+        --aggregation-display-second-bar-height: var(--aggregation-query-and-display-second-bar-height, 20px);
+        --aggregation-display-second-bar-title-color: var(--aggregation-query-and-display-second-bar-title-color, var(--paper-grey-900));
+        --aggregation-display-second-bar-title-hover-color: var(--aggregation-query-and-display-second-bar-title-hover-color, var(--paper-grey-700));
       }
     </style>
 
