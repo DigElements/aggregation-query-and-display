@@ -80,7 +80,7 @@ limitations under the License.
         expect(element.showCheckboxes).to.be.false;
         expect(element.showDoubleBarChart).to.be.false;
         expect(element.target).to.equal('_self');
-        expect(element.small).to.be.false;
+        expect(element.limit).to.equal(10);
         expect(element.error).to.not.exist;
         expect(element.errorMessage).to.equal('');
         expect(element.loading).to.be.false;
@@ -122,7 +122,7 @@ limitations under the License.
         expect(element.$$('aggregation-display').indexName).to.equal('myIndexName');
         expect(element.$$('aggregation-display').indexTypes).to.deep.equal(['myIndexType']);
         expect(element.$$('aggregation-display').queryField).to.equal('myAggregationField');
-        expect(element.$$('aggregation-display').small).to.be.false;
+        expect(element.$$('aggregation-display').limit).to.equal(10);
         expect(element.$$('aggregation-display').errorMessage).to.equal('');
         expect(element.$$('aggregation-display').loading).to.be.false;
         expect(element.$$('aggregation-display').selectedIds).to.deep.equal([]);

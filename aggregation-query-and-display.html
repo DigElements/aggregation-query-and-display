@@ -52,6 +52,7 @@ Custom property                                                | Description    
 `--aggregation-query-and-display-bar-height`                   | The height of the single or left bars.                              | 20px
 `--aggregation-query-and-display-bar-title-color`              | The color of the single or left title labels.                       | --paper-grey-900
 `--aggregation-query-and-display-bar-title-hover-color`        | The color of the single or left title labels on hover (if a link).  | --paper-grey-700
+`--aggregation-query-and-display-max-height`                   | The max height of the bar chart.                                    | 280px
 `--aggregation-query-and-display-second-bar-color`             | The color of the right (second) bars.                               | --paper-grey-400
 `--aggregation-query-and-display-second-bar-count-color`       | The color of the right (second) count labels.                       | --paper-grey-900
 `--aggregation-query-and-display-second-bar-height`            | The height of the right (second) bars.                              | 20px
@@ -76,6 +77,7 @@ Custom property                                                | Description    
         --aggregation-display-bar-height: var(--aggregation-query-and-display-bar-height, 20px);
         --aggregation-display-bar-title-color: var(--aggregation-query-and-display-bar-title-color, var(--paper-grey-900));
         --aggregation-display-bar-title-hover-color: var(--aggregation-query-and-display-bar-title-hover-color, var(--paper-grey-700));
+        --aggregation-display-max-height: var(--aggregation-query-and-display-max-height, 280px);
         --aggregation-display-second-bar-color: var(--aggregation-query-and-display-second-bar-color, var(--paper-grey-400));
         --aggregation-display-second-bar-count-color: var(--aggregation-query-and-display-second-bar-count-color, var(--paper-grey-900));
         --aggregation-display-second-bar-height: var(--aggregation-query-and-display-second-bar-height, 20px);
@@ -127,7 +129,7 @@ Custom property                                                | Description    
       index-name="[[indexName]]"
       index-types="[[indexTypes]]"
       query-field="[[aggregationField]]"
-      small="[[small]]"
+      limit="[[limit]]"
       selected-ids-property="[[selectedProperty]]"
       selected-ids="{{selected}}">
     </aggregation-display>
@@ -461,19 +463,6 @@ Custom property                                                | Description    
         },
 
         /**
-         * (Optional)
-         *
-         * Whether the element is small.
-         *
-         * @type {Boolean}
-         * @default false
-         */
-        small: {
-          type: Boolean,
-          value: false
-        },
-
-        /**
          * (Output)
          *
          * The transformed query results.
@@ -508,6 +497,19 @@ Custom property                                                | Description    
           notify: true,
           type: String,
           value: ''
+        },
+
+        /**
+         * (Optional)
+         *
+         * The limit on the initial number of items from the data to show in this component (or 0 to show all items).
+         *
+         * @type {Number}
+         * @default 10
+         */
+        limit: {
+          type: Number,
+          value: 10
         },
 
         /**
