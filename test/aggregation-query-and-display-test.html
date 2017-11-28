@@ -36,7 +36,7 @@ limitations under the License.
     suite('aggregation-query-and-display tests', function() {
       var element;
 
-      setup(function() {
+      setup(function(done) {
         element = fixture('aggregation-query-and-display-fixture');
         element.aggregationField = 'myAggregationField';
         element.headerCountsName = 'My Counts';
@@ -50,6 +50,7 @@ limitations under the License.
           key: 'value'
         };
         element.transformFunction = function() {};
+        flush(done);
       });
 
       test('input properties are set correctly', function() {

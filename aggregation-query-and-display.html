@@ -108,31 +108,33 @@ Custom property                                                | Description    
     <elastic-error error="[[error]]" message="{{errorMessage}}"></elastic-error>
 
     <!-- Yes, use aggregationField for the query field of the double-bar-chart in the aggregation-display! -->
-    <aggregation-display class="flex"
-      count-property="[[dataCountProperty]]"
-      icon-property="[[dataIconProperty]]"
-      id-property="[[dataIdProperty]]"
-      link-property="[[dataLinkProperty]]"
-      style-class-property="[[dataStyleClassProperty]]"
-      text-property="[[dataTextProperty]]"
-      data="[[data]]"
-      header-counts-name="[[headerCountsName]]"
-      header-data-name="[[headerDataName]]"
-      header-entity-name="[[headerEntityName]]"
-      error-message="[[errorMessage]]"
-      loading="[[loading]]"
-      show-checkboxes="[[showCheckboxes]]"
-      checkbox-name="[[checkboxName]]"
-      show-double-bar-chart="[[showDoubleBarChart]]"
-      target="[[target]]"
-      client="[[client]]"
-      index-name="[[indexName]]"
-      index-types="[[indexTypes]]"
-      query-field="[[aggregationField]]"
-      limit="[[limit]]"
-      selected-ids-property="[[selectedProperty]]"
-      selected-ids="{{selected}}">
-    </aggregation-display>
+    <template is="dom-if" if="[[!hideBarChart]]">
+      <aggregation-display class="flex"
+        count-property="[[dataCountProperty]]"
+        icon-property="[[dataIconProperty]]"
+        id-property="[[dataIdProperty]]"
+        link-property="[[dataLinkProperty]]"
+        style-class-property="[[dataStyleClassProperty]]"
+        text-property="[[dataTextProperty]]"
+        data="[[data]]"
+        header-counts-name="[[headerCountsName]]"
+        header-data-name="[[headerDataName]]"
+        header-entity-name="[[headerEntityName]]"
+        error-message="[[errorMessage]]"
+        loading="[[loading]]"
+        show-checkboxes="[[showCheckboxes]]"
+        checkbox-name="[[checkboxName]]"
+        show-double-bar-chart="[[showDoubleBarChart]]"
+        target="[[target]]"
+        client="[[client]]"
+        index-name="[[indexName]]"
+        index-types="[[indexTypes]]"
+        query-field="[[aggregationField]]"
+        limit="[[limit]]"
+        selected-ids-property="[[selectedProperty]]"
+        selected-ids="{{selected}}">
+      </aggregation-display>
+    </template>
   </template>
 
   <script>
@@ -408,6 +410,19 @@ Custom property                                                | Description    
         headerEntityName: {
           type: String,
           value: ''
+        },
+
+        /**
+         * (Optional)
+         *
+         * Whether to hide the bar chart.
+         *
+         * @type {Boolean}
+         * @default false
+         */
+        hideBarChart: {
+          type: Boolean,
+          value: false
         },
 
         /**
